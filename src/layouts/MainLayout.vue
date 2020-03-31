@@ -1,8 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header class="bg-dark" bordered>
       <q-toolbar>
+
         <q-btn
+          class="lt-md"
           flat
           dense
           round
@@ -10,20 +12,87 @@
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-space class="lt-md"/>
+        <q-btn
+          flat
+          dense
+          round
+          icon="home"
+        />
+        <q-space class="gt-sm" />
+        <q-tabs class="gt-sm" inline-label no-caps>
+          <q-route-tab
+            icon="event_note"
+            to="/"
+            exact
+            label="Мероприятия"
+          />
+          <q-route-tab
+            icon="alarm"
+            to="/"
+            exact
+            label="Участникам"
+          />
+          <q-route-tab
+            icon="supervisor_account"
+            to="/"
+            exact
+            label="Спикеры"
+          />
+          <q-route-tab
+            icon="description"
+            to="/"
+            exact
+            label="Публикации"
+          />
+        </q-tabs>
+        <q-space/>
+        <q-btn
+          flat
+          round
+          icon="account_circle"
+        />
       </q-toolbar>
+      <q-tabs inline-label no-caps>
+        <q-route-tab
+          icon="event_note"
+          to="/"
+          exact
+          label="Track#1"
+        />
+        <q-route-tab
+          icon="event_note"
+          to="/"
+          exact
+          label="Track#1"
+        />
+        <q-route-tab
+          icon="event_note"
+          to="/"
+          exact
+          label="Track#1"
+        />
+        <q-route-tab
+          icon="event_note"
+          to="/"
+          exact
+          label="Track#1"
+        />
+        <q-route-tab
+          icon="event_note"
+          to="/"
+          exact
+          label="Track#1"
+        />
+      </q-tabs>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
-      content-class="bg-grey-1"
+      side="left"
+      behavior="normal"
+      overlay
     >
       <q-list>
         <q-item-label
@@ -41,7 +110,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view/>
     </q-page-container>
   </q-layout>
 </template>
